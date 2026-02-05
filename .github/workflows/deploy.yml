@@ -41,8 +41,13 @@ jobs:
         run: |
             git config user.name "github-actions[bot]"
             git config user.email "github-actions@noreply"
-            git add k8s/pyapp-deployment.yml
-            git commit -m 'docker tag updated by GHA' 
+          # git add k8s/pyapp-deployment.yml
+          # git commit -m 'docker tag updated by GHA' 
+          # git push origin main
+
+            git fetch origin main
+            git pull --rebase origin main
+
             git push origin main
   
      
